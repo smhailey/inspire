@@ -4,6 +4,13 @@ const _todoService = new TodoService()
 
 function _drawTodos() {
 	//WHAT IS MY PURPOSE?
+	let todosElem = document.querySelector("#todos")
+	let template = ''
+	let todos = _todoService.Todos
+	todos.forEach(todo => {
+		template += todo.makeTemplate
+	})
+	todosElem.innerHTML = template
 }
 
 function _drawError() {
@@ -11,22 +18,26 @@ function _drawError() {
 	//document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`
 }
 
-
 export default class TodoController {
 	constructor() {
+		console.log("Todo Controller works")
 		_todoService.addSubscriber('error', _drawError)
 		_todoService.getTodos()
 		// Don't forget to add your subscriber
+		_todoService.addSubscriber('todos', _drawTodos)
 	}
 
 	addTodo(e) {
 		e.preventDefault()
-		var form = e.target
-		var todo = {
+		let form = e.target
+		let newTodo = {
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
+			description: form.description.value
 		}
 
-		_todoService.addTodo(todo)
+		_todoService.addTodo(newTodo)
+		form.reset()
+		_drawTodos()
 	}
 
 	toggleTodoStatus(todoId) {
@@ -38,7 +49,4 @@ export default class TodoController {
 		// ask the service to run the remove todo with this id
 		_todoService.removeTodo(todoId)
 	}
-
-
-
 }
