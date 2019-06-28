@@ -7,8 +7,20 @@ function _drawTodos() {
 	let todosElem = document.querySelector("#todos")
 	let template = ''
 	let todos = _todoService.Todos
-	todos.forEach(todo => {
-		template += todo.makeTemplate
+	todos.forEach(t => {
+		// template += todo.completedTemplate
+		if (t.completed == true) {
+			template += `
+				<li class="mb-2" onclick="app.controllers.todoController.getTodos()"><del>${t.description}</del>  &ensp; <button class="btn btn-sm btn-danger shadow" id="todo-delete" onclick="app.controllers.todoController.removeTodo('${t._id}')">Delete</button></li>
+        `
+		} else {
+			template += `
+        <li onclick="app.controllers.todoController.getTodos()">${t.description} &ensp;<input type="checkbox" class="todo-checkbox mt-2" name="completed"
+				 onclick="app.controllers.todoController.toggleTodoStatus('${t._id}')"></li>
+				`
+		}
+
+
 	})
 	todosElem.innerHTML = template
 }
@@ -38,6 +50,10 @@ export default class TodoController {
 		_todoService.addTodo(newTodo)
 		form.reset()
 		_drawTodos()
+	}
+
+	getTodos() {
+		_todoService
 	}
 
 	toggleTodoStatus(todoId) {

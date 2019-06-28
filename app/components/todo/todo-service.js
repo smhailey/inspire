@@ -51,7 +51,7 @@ export default class TodoService {
 	}
 
 	addTodo(newTodo) {
-		debugger
+		// debugger
 		todoApi.post('', newTodo)
 			.then(res => {
 				// WHAT DO YOU DO AFTER CREATING A NEW TODO?
@@ -61,24 +61,18 @@ export default class TodoService {
 			.catch(err => _setState('error', err.response.data))
 	}
 
-
-
-
 	toggleTodoStatus(todoId) {
 		let todo = _state.todos.find(todo => todo._id == todoId)
 		// Be sure to change the completed property to its opposite
 		// todo.completed = !todo.completed <-- THIS FLIPS A BOOL
-
-
-
-
+		todo.completed = !todo.completed
 		todoApi.put(todoId, todo)
 			.then(res => {
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
 				this.getTodos()
 				_setState('todo', todo)
 			})
-			.catch(err => _setState('error', err.response.data))
+			.catch(err => _setState('error', err.res.data))
 	}
 
 	removeTodo(todoId) {
@@ -90,7 +84,6 @@ export default class TodoService {
 				let index = todos.findIndex(t => t._id == todoId)
 				todos.splice(index, 1)
 				_setState('todos', todos)
-
 			})
 	}
 }

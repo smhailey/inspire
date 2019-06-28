@@ -6,10 +6,18 @@ export default class Todo {
     this.description = data.description
   }
 
-  get makeTemplate() {
+  get completedTemplate() {
     return `
-    <div class="col-2">
-    <input type="checkbox" name="vehicle" value="Bike">${this.description}<br>
+    <div class="col-4">
+    <input type="checkbox" name="todo" value="completed">${this.description}<br>
+    </div>
+    `
+  }
+
+  get unCompletedTemplate() {
+    return `
+    <div class="col-4">
+    <input type="checkbox" name="todo" value="completed">${this.description}<br>
     </div>
     `
   }

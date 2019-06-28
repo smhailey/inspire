@@ -1,4 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Tahoma', sans-serif;
+}
+
 #todo-error{
   color: red;
   font-size: 2em;
+}
+
+li {
+  list-style: none;
+}
+
+.todo-checkbox,
+.completed {
+  float: left;
+}
+
+.completed {
+  font-size: 0.8rem;
 }
