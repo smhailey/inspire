@@ -3,7 +3,7 @@ import Todo from "../../models/Todo.js";
 // @ts-ignore
 const todoApi = axios.create({
 	baseURL: 'https://bcw-sandbox.herokuapp.com/api/Sean/todos/',
-	timeout: 3000
+	timeout: 5000
 });
 
 let _state = {
@@ -70,20 +70,26 @@ export default class TodoService {
 			.then(res => {
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
 				this.getTodos()
-				_setState('todo', todo)
 			})
-			.catch(err => _setState('error', err.res.data))
+			.catch(err => _setState('error', err.response.data))
 	}
 
 	removeTodo(todoId) {
 		// This one is on you to write.... 
 		// The http method is delete at the todoId
 		todoApi.delete(todoId)
-			.then(() => {
-				let todos = this.Todos
-				let index = todos.findIndex(t => t._id == todoId)
-				todos.splice(index, 1)
-				_setState('todos', todos)
+			.then(res => {
+				this.getTodos()
 			})
+			.catch(err => _setState('error', err.response.data))
+
+
+
+		// .then(() => {
+		// 	let todos = this.Todos
+		// 	let index = todos.findIndex(t => t._id == todoId)
+		// 	todos.splice(index, 1)
+		// 	_setState('todos', todos)
+		// })
 	}
 }

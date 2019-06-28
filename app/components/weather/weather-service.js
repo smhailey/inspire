@@ -3,7 +3,7 @@ import Weather from "../../models/weather.js";
 // @ts-ignore
 const weatherApi = axios.create({
 	baseURL: "//bcw-sandbox.herokuapp.com/api/weather",
-	timeout: 3000
+	timeout: 5000
 });
 
 let _state = {
@@ -19,7 +19,6 @@ function _setState(prop, data) {
 	_subscribers[prop].forEach(fn => fn());
 }
 
-
 export default class WeatherService {
 	get Weather() {
 		return _state.weather
@@ -33,6 +32,7 @@ export default class WeatherService {
 		console.log('Calling the Weatherman')
 		weatherApi.get().then(res => {
 			_setState('weather', new Weather(res.data))
+			// console.log(res.data)
 		})
 	}
 }

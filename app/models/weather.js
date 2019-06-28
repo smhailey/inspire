@@ -8,5 +8,15 @@ export default class Weather {
     // You should probably convert the temperature data to either F or C
     this.city = data.name
     this.kelvin = data.main.temp
+    this.farenheit = ((9 / 5) * (this.kelvin - 273) + 32).toFixed(0)
+  }
+
+  weatherTemplate() {
+    return `
+      <div class="text-red" id="weather">
+				  <h5 class="mt-1">${this.city} Weather</h5>
+				  <p class="weather-p">Temperature: ${this.farenheit}°F</p>
+		  </div>
+          `
   }
 }
