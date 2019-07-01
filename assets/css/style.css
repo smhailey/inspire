@@ -6,6 +6,13 @@ body {
   font-family: 'Tahoma', sans-serif;
 }
 
+#bg-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 10%;
+  position: absolute;
+}
+
 #todo-error{
   color: red;
   font-size: 2em;
@@ -22,4 +29,16 @@ li {
 
 .completed {
   font-size: 0.8rem;
+}
+
+#quote {
+  background: black;
+  color: white;
+  text-shadow: 0.2px 0.9px green;
+  border: transparent;
+  line-height: 0.3rem;
+  opacity: 0.6;
+  padding: 1.5vh 1.5vw;
+  letter-spacing: 0.1rem;
+  font-weight: 300;
 }

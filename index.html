@@ -12,23 +12,31 @@
 </head>
 
 <body id="bg-image">
-	<div id="weather">
-	</div>
-
-	<div id="quote">
-		The Quote
-	</div>
-
-	<div>
-		A Todo List
-		<div id="todo-error"></div>
-		<form onsubmit="app.controllers.todoController.addTodo(event)">
-			<label for="description"></label>
-			<input type="text" name="description" placeholder="New Todo" required>
-			<!-- <textarea name="description" cols="30" rows="1"></textarea> -->
-			<button type="submit" class="btn btn-outline-success btn-sm">Add</button>
-		</form>
-		<div id="todos"></div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 mt-2 d-flex flex-column justify-content-start">
+				<div id="weather">
+				</div>
+			</div>
+			<div class="col-12 mt-2 d-flex flex-column justify-content-start">
+				<div id="quote">
+					The Quote
+				</div>
+			</div>
+			<div class="col-12 mt-2 d-flex flex-column justify-content-start">
+				<div>
+					A Todo List
+					<div id="todo-error"></div>
+					<form onsubmit="app.controllers.todoController.addTodo(event)">
+						<label for="description"></label>
+						<input type="text" name="description" placeholder="New Todo" required>
+						<!-- <textarea name="description" cols="30" rows="1"></textarea> -->
+						<button type="submit" class="btn btn-outline-success btn-sm">Add</button>
+					</form>
+					<div id="todos"></div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
