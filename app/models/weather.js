@@ -13,9 +13,9 @@ export default class Weather {
 
   weatherTemplate() {
     return `
-      <div class="text-red" id="weather">
-				  <h5 class="mt-1">${this.city} Weather</h5>
-				  <p class="weather-p">Temperature: ${this.farenheit}°F</p>
+      <div>
+				  <p>${this.city} Weather</p>
+				  <p>Temperature: ${this.farenheit}°F</p>
 		  </div>
           `
   }
