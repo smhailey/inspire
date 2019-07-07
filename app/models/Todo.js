@@ -8,7 +8,7 @@ export default class Todo {
 
   get completedTemplate() {
     return `
-    <div class="col-4">
+    <div class="col">
     <input type="checkbox" name="todo" value="completed">${this.description}<br>
     </div>
     `
@@ -16,7 +16,7 @@ export default class Todo {
 
   get unCompletedTemplate() {
     return `
-    <div class="col-4">
+    <div class="col">
     <input type="checkbox" name="todo" value="completed">${this.description}<br>
     </div>
     `

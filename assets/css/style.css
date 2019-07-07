@@ -19,7 +19,7 @@ body {
   text-shadow: 0.2px 0.9px green;
   border: transparent;
   line-height: 0.5rem;
-  opacity: 0.6;
+  opacity: 0.65;
   letter-spacing: 0.1rem;
   padding: 1vh 1vw;
   font-size: 0.9rem;
@@ -30,13 +30,13 @@ body {
   font-size: 2em;
 }
 
-#todos {
+#todo-style {
   background: black;
   color: white;
   text-shadow: 0.2px 0.9px green;
   border: transparent;
   line-height: 1.5rem;
-  opacity: 0.6;
+  opacity: 0.65;
   letter-spacing: 0.1rem;
   padding: 1.5vh 1.5vw;
 }
@@ -54,14 +54,17 @@ li {
   font-size: 0.8rem;
 }
 
-#quote {
+#quote-style {
   background: black;
   color: white;
   text-shadow: 0.2px 0.9px green;
   border: transparent;
   line-height: 0.3rem;
-  opacity: 0.6;
-  padding: 1vh 1vw;
-  letter-spacing: 0.1rem;
-  font-weight: 300;
+  opacity: 0.7;
+  padding: 0.5vh 0.5vw;
+  /* letter-spacing: 0.1rem; */
+  /* font-weight: 300; */
+  position:fixed;
+  bottom:0;
+  width:100%;
 }
