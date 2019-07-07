@@ -14,27 +14,46 @@
 <body id="bg-image">
 	<div class="container-fluid">
 		<div class="row justify-content-end">
-			<div class="col d-flex flex-row-reverse">
-				<div id="weather">
-				</div>
-			</div>
+			<!-- <div class="col d-flex flex-row-reverse"> -->
+			<div id="weather"></div>
+			<!-- </div> -->
 		</div>
-		<div class="row justify-content-end">
+
+		<div class="row">
 			<div id="todo-style" class="col d-flex flex-row-reverse">
 				<div id="todo-error"></div>
-				<form onsubmit="app.controllers.todoController.addTodo(event)">
-					<label for="description"></label>
-					<input type="text" name="description" placeholder="New Todo" required>
-					<!-- <textarea name="description" cols="30" rows="1"></textarea> -->
-					<button type="submit" class="btn btn-outline-success btn-sm">Add</button>
-				</form>
-				<div id="todos"></div>
 			</div>
 		</div>
+
+
+
+
+
+		<div class="row justify-content-end">
+			<!-- <div class="col d-flex flex-row-reverse"> -->
+			<div id="todos"></div>
+			<!-- </div> -->
+		</div>
+
+
+		<div class="row justify-content-end">
+			<!-- <div class="col d-flex flex-row-reverse"> -->
+			<form onsubmit="app.controllers.todoController.addTodo(event)">
+				<label for="description"></label>
+				<input type="text" name="description" placeholder="New Todo" required>
+				<!-- <textarea name="description" cols="30" rows="1"></textarea> -->
+				<button type="submit" class="btn btn-outline-success btn-sm">Add</button>
+			</form>
+			<!-- <br> -->
+		</div>
+
+
+
+
+
 		<div class="row justify-content-end">
 			<div class="col-12 mt-2 d-flex flex-column justify-content-start">
-				<div id="quote">
-				</div>
+				<div id="quote"></div>
 			</div>
 		</div>
 	</div>
