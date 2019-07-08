@@ -13,46 +13,36 @@
 
 <body id="bg-image">
 	<div class="container-fluid">
+		<!-- weather goes here -->
 		<div class="row justify-content-end mb-5">
-			<!-- <div class="col d-flex flex-row-reverse"> -->
 			<div id="weather"></div>
-			<!-- </div> -->
 		</div>
 
-		<div class="row">
-			<div id="todo-style" class="col d-flex flex-row-reverse">
-				<div id="todo-error"></div>
-			</div>
-		</div>
-
-
-
-
-
-		<div class="row justify-content-end mt-5">
-			<!-- <div class="col d-flex flex-row-reverse"> -->
-			<div id="todos"></div>
+		<!-- todo list goes here -->
+		<div class="row justify-content-end mt-5 mb-1">
+			<!-- <div class="d-flex flex-row-reverse my-1"> -->
+			<div id="todo-style"></div>
 			<!-- </div> -->
 		</div>
 
 
+
+		<!-- todo form goes here -->
 		<div class="row justify-content-end">
-			<!-- <div class="col d-flex flex-row-reverse"> -->
 			<form onsubmit="app.controllers.todoController.addTodo(event)">
 				<label for="description"></label>
 				<input type="text" name="description" placeholder="New Todo" required>
 				<!-- <textarea name="description" cols="30" rows="1"></textarea> -->
 				<button type="submit" class="btn btn-outline-success btn-sm">Add</button>
 			</form>
-			<!-- <br> -->
 		</div>
 
 
 
 
-
-		<div id="quote-style" class="row fixed-row-bottom">
-			<div class="col-6 offset-3 align-self-center">
+		<!-- quote goes here -->
+		<div class="row fixed-row-bottom">
+			<div id="quote-style" class="col-6 offset-3 align-self-center">
 				<div id="quote"></div>
 			</div>
 		</div>

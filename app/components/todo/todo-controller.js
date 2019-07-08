@@ -4,7 +4,7 @@ let _todoService = new TodoService()
 
 function _drawTodos() {
 	//WHAT IS MY PURPOSE?
-	let todosElem = document.querySelector("#todos")
+	let todosElem = document.querySelector("#todo-style")
 	let template = ''
 	let todos = _todoService.Todos
 	todos.forEach(t => {
