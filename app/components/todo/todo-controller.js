@@ -4,7 +4,7 @@ let _todoService = new TodoService()
 
 function _drawTodos() {
 	//WHAT IS MY PURPOSE?
-	let todosElem = document.querySelector("#todo-style")
+	let todosElem = document.querySelector("#todo")
 	let template = ''
 	let todos = _todoService.Todos
 	todos.forEach(t => {
@@ -20,6 +20,10 @@ function _drawTodos() {
 				`
 		}
 	})
+
+	//count/display number of todo's
+	document.querySelector('#num-todos').innerHTML = ' ' + _todoService.Todos.length + ' ' + 'task(s)'
+
 	todosElem.innerHTML = template
 }
 
